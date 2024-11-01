@@ -1,0 +1,200 @@
+* { 
+    margin: 0; 
+    background: #f5f5f5; 
+}  
+
+
+
+body { 
+    font-family: Arial, sans-serif; 
+    background-color: #fff !important;  
+} 
+
+
+/* Navbar */ 
+.navbar { 
+    display: flex; 
+    align-items: center; 
+    padding: 20px; 
+    background-color: #fff; 
+   
+} 
+
+.logo img { 
+    width: 150px; 
+    padding-right: 20px;
+} 
+
+.search-bar { 
+    flex-grow: 1; 
+    margin: 0 20px; 
+    padding: 10px; 
+    border: 1px solid #ccc; 
+    border-radius: 5px; 
+    font-size: 1em;
+} 
+
+/* Icon Buttons */ 
+.nav-icons { 
+    display: flex; 
+    align-items: center ;
+    border-bottom: 1px solid #ddd; 
+    background-color: #fff; 
+} 
+
+.icon-btn {
+    color: #ffa500;;
+    text-decoration: none;
+    font-size: 1.5em;
+    margin: 0 10px;
+    transition: color 0.3s; 
+
+}
+
+.icon-btn:hover {
+    color: #f76c6c; /* Change to the color you prefer on hover */
+}
+
+.nav-links a {
+    margin: 0 10px;
+    color: #ffa500;
+    text-decoration: none;
+    font-size: 1em;
+    padding: 8px 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.nav-links a:hover {
+    background-color: #ffa500; ;
+    color: #fff;
+    border-color: #f76c6c;
+}
+
+/* Sidebar */
+.sidebar {
+    width: 200px;
+    padding: 20px;
+    background-color: #fff;
+    border-right: 1px solid #ddd;
+}
+
+.sidebar h3 {
+    
+    color: #333;
+}
+
+.price-filter input {
+    width: 80px;
+    padding: 5px;
+    margin: 5px 0;
+}
+
+.categories {
+    list-style: none;
+    margin: 10px 0 20px; 
+    padding-left: 15px; 
+}
+
+.categories li {
+    display: block;
+    padding: 10px 15px;
+    margin: 8px 0;
+    background-color: #f5f5f5;
+    color: #555;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.categories li:hover {
+    background-color: #ffa500; /* Button color on hover */
+    color: #fff;
+}
+
+.categories li:active {
+    background-color: #f76c6c; /* Active/pressed state color */
+    color: #fff;
+}
+/* Posts Section */
+
+
+.posts {
+    flex-grow: 1;
+    padding: 20px;
+}
+ 
+.sort-options {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    margin-bottom: 20px;
+}
+
+.sort-options label {
+    margin-right: 10px;
+}
+
+
+.posts-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px; 
+    padding: 20px;
+}
+
+/* Individual Post Item */
+.post-item {
+    position: relative;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background-color: #fff;
+    padding: 15px;
+    text-align: center;
+}
+
+.post-item img {
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+.post-item h5 {
+    font-size: 1.1em;
+    margin: 10px 0;
+    color: #333;
+}
+
+.post-item p {
+    color: #666;
+    font-size: 1em; 
+    text-decoration: none;
+} 
+
+a { 
+    text-decoration: none;
+} 
+
+/* Favorite Icon on Post Item */
+.favorite-icon {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-color: #fff;
+    border-radius: 50%;
+    padding: 5px;
+    color: #f76c6c;
+    font-size: 1.2em;
+    transition: color 0.3s, transform 0.3s;
+}
+
+.favorite-icon:hover {
+    transform: scale(1.1);
+    color: #ff3b3b;
+}
+
+.clothes-section { 
+    margin-top: 20px;
+}
