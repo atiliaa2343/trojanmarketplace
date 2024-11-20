@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Posts Page</title>
+    <link rel="stylesheet" href="posts1.css">
+</head>
+<body>
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head> 
+<body>  
+<div id="homePageDiv" style="display:block;">
+    <header class = "navbar">   
+        <div class = "logo">
+            <img src = "vsu.png" alt="Logo"> 
+        </div>
+    
+    <div class = "navbar-title"> 
+        Trojan Marketplace
+    </div>  
+  <div id = "navBar">  
+        <!--Displays Create a Post page when button is clicked on-->
+    <button onclick="displayCreatePost()">Create A Post</button>
+    <input type = "text" placeholder="Search on Trojan Marketplace" class = "search-bar">
+</div>
+    </header>  
+
+    <!-- Main Content --> 
+     <main>   
+
+         <!-- Icon Links --> 
+     <div class="nav-icons"> 
+        <!-- Home -->
+        <a href="#" class="icon-btn" title="Home"> 
+           <i class="fa-solid fa-house"></i>
+       </a>  
+       <!-- Messages -->
+       <a href="#" class="icon-btn" title="Messages"> 
+           <i class="fa-solid fa-envelope"></i>
+       </a> 
+        <!-- Bids -->
+        <a href="#" class="icon-btn" title="Messages"> 
+           <i class="fa-solid fa-gavel"></i>
+       </a> 
+       <!-- Favorites -->
+       <a href="#" class="icon-btn" title="Messages"> 
+           <i class="fa-solid fa-heart"></i>
+       </a>
+    </div>
+     
+    <aside class = "sidebar"> 
+            <h3>Today's Picks</h3> 
+            <div class = "price-filter"> 
+                <label>Price $</label> 
+                <input type="number" placeholder="Min"> 
+                <input type="number" placeholder="Max"> 
+
+            </div> 
+
+            <h4>Product Categories</h4> 
+            <!-- Categories pulled from database --> 
+             <ul class="categories"> 
+                <li id ="clothes-category" data-category = "Clothes" role="button">Clothes</li> 
+                <li data-category = "Shoes" role="button">Shoes</li> 
+                <li data-category = "Lifestyle" role="button">Lifestyle</li> 
+                <li data-category = "Home Goods" role="button">Home Goods</li> 
+                <li data-category = "Vehicles" role="button">Vehicles</li> 
+                <li data-category = "Miscellaneous" role="button">Miscellaneous</li>
+             </ul>
+        </aside>  
+        <section id="items-display" class="posts-grid"></section>
+
+
+        
+     </main>
+    <script src = "home.js"></script>
+</div>
+
+<div id="createPostDiv" style="display:none;"> 
+    <header>
+    <h1>Create A Post</h1>
+</header>
+<form id = "createPostDiv" action="postpage.php" method="post" enctype="multipart/form-data"></form>
+<label>Choose Category for post</label><br>
+        <Select id="category" name="category">
+            <option>---</option>
+            <option value="Home Goods">Home Goods</option>
+            <option value="Vehicles">Vehicles</option>
+            <option value="Miscellaneous">Miscellaneous</option>
+            <option value="Services">Services</option>
+            <option value="Music">Music</option>
+            <option value="Supplies">Supplies</option>
+            <option value="Lifestyle">Lifestyle</option>
+            <option value="Clothes">Clothes</option>
+            <option value="Shoes">Shoes</option>
+        </Select><br><br>
+    
+    <label>Insert Image</label>
+    <input type="file" name="insertImage">
+
+    <label>Title for post: </label>
+    <input type="text" name="TitleItem">
+    
+    <label>Condition: </label>
+    <input type="text" name="conditionItem">
+
+    <label>Price for item: </label>
+    <input type ="number" name="priceItem">
+
+
+<div id="post">
+    <button type="submit">Post</button>
+</div>
+<div id="resultDiv" style="display:none;"></div>
+<form>
+</form>
+</div>
+<script src="postS.js"></script>
+
+
+
+</body>
+</html>
