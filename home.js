@@ -16,6 +16,10 @@ document.addEventListener("DOMContentLoaded", () => {
 function displayCreatePost() {
     document.getElementById("homePageDiv").style.display = "none";
     document.getElementById("createPostDiv").style.display = "block";
+} 
+
+function navigateToWelcomePage() {
+    window.location.href = 'login-welcome/welcome.php'; // Replace with the correct path to your posts page
 }
 
 function fetchItemsByCategory(category = '') {

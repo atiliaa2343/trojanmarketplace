@@ -115,7 +115,7 @@ if (isset($_GET['action']) && $_GET['action'] === 'fetch') {
             <button class = "navbar-button" onclick="displayCreatePost()">Create A Post</button>
         </div>
         <div class="navbar-buttons">
-            <button class="navbar-button">Sign Up</button>
+            <button class="navbar-button" onclick="navigateToWelcomePage()" >Sign Up</button>
         </div>
     </header>
 
