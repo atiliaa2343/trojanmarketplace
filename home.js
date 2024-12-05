@@ -1,45 +1,60 @@
-//Event Listener for the "Clothes" category 
-document.addEventListener("DOMContentLoaded", () => { 
-    const categoryLinks = document.querySelectorAll(".categories li"); 
-    
-    categoryLinks.forEach(link => { 
+document.addEventListener("DOMContentLoaded", () => {
+    const categoryLinks = document.querySelectorAll(".categories li");
+
+    // Fetch all items by default when the page loads
+    fetchItemsByCategory();
+
+    categoryLinks.forEach(link => {
         link.addEventListener("click", () => {
-            const category = link.getAttribute("data-category"); 
-            fetchItemsByCategory(category);
-    
-            });
+            const category = link.getAttribute("data-category");
+            fetchItemsByCategory(category); // Pass the category to the function
         });
+    });
+});
 
-});  
 
-function fetchItemsByCategory(category) { 
-    fetch(`home.php?category=${category}`) 
-        .then(response => { 
-            if (!response.ok) { 
-                throw new Error('Network response was not ok')
-            } 
+function displayCreatePost() {
+    document.getElementById("homePageDiv").style.display = "none";
+    document.getElementById("createPostDiv").style.display = "block";
+}
+
+function fetchItemsByCategory(category = '') {
+    const url = category ? `home.php?action=fetch&category=${category}` : 'home.php?action=fetch';
+
+    fetch(url)
+        .then(response => {
+            if (!response.ok) {
+                throw new Error('Network response was not ok');
+            }
             return response.json();
         })
-        .then(items => displayItems(items)) 
-        .catch(error => console.error("Error fetching items:", error));
+        .then(items => {
+            displayItems(items);
+        })
+        .catch(error => {
+            console.error("Error fetching items:", error);
+        });
 }
 
-//Function to display items on the page 
-function displayItems(items) { 
-    const displaySection = document.getElementById('items-display'); 
-    displaySection.innerHTML = ''; 
-    items.forEach(item => { 
-        const itemDiv = document.createElement('div'); 
-        itemDiv.classList.add('item', "post-item"); 
-        itemDiv.innerHTML = `  
-        <a href = "item.php?id=${item.item_id}" class = "item-link">
-        <img src="${item.image}" alt="${item.description}"> 
-        <h5>Description: ${item.description}</h5> 
-        <p>Price: $${item.price}</p> 
-        <p>Condition: ${item.condition}</p> 
-        <p>Date Listed: ${item.date_time}</p>` 
-        ; 
+function displayItems(items) {
+    const displaySection = document.getElementById('items-display');
+    displaySection.innerHTML = '';
+
+    if (items.length === 0) {
+        displaySection.innerHTML = '<p>No items found.</p>';
+        return;
+    }
+
+    items.forEach(item => {
+        const itemDiv = document.createElement('div');
+        itemDiv.classList.add('post-item');
+        itemDiv.innerHTML = `
+            <img src="${item.image}" alt="${item.description}">
+            <h5>Description: ${item.description}</h5>
+            <p>Price: $${item.price}</p>
+            <p>Condition: ${item.condition}</p>
+        `;
         displaySection.appendChild(itemDiv);
-    }); 
-    
+    });
 }
+

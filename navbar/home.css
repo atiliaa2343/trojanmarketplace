@@ -1,23 +1,13 @@
-
-
 * { 
     margin: 0; 
-    padding: 0; 
-    box-sizing: border-box;
     background: #f5f5f5; 
-
-   
 }  
 
 
 
 body { 
-    transform: scale(1.5);
-    transform-origin: 0 0;
     font-family: Arial, sans-serif; 
     background-color: #fff !important;  
-    overflow-x: hidden;
-
 } 
 
 
@@ -26,9 +16,7 @@ body {
     display: flex; 
     align-items: center; 
     padding: 20px; 
-    background-color: #fff;
-    overflow: hidden; 
-   
+    background-color: #fff; 
    
 } 
 
@@ -38,9 +26,9 @@ body {
 } 
 
 .search-bar { 
-    flex-grow: 0.5;
+    flex-grow: 1; 
     margin: 0 20px; 
-    padding: 2px; 
+    padding: 10px; 
     border: 1px solid #ccc; 
     border-radius: 5px; 
     font-size: 1em;
@@ -57,10 +45,9 @@ body {
 .icon-btn {
     color: #ffa500;;
     text-decoration: none;
-    font-size: 2em;
+    font-size: 1.5em;
     margin: 0 10px;
     transition: color 0.3s; 
-    background-color: none;
 
 }
 
@@ -115,11 +102,10 @@ body {
     padding: 10px 15px;
     margin: 8px 0;
     background-color: #f5f5f5;
-    color: black;
+    color: #555;
     cursor: pointer;
     border-radius: 5px;
-    transition: background-color 0.3s, color 0.3s; 
-    font-size: 1.5em;
+    transition: background-color 0.3s, color 0.3s;
 }
 
 .categories li:hover {
@@ -137,12 +123,11 @@ body {
 .posts {
     flex-grow: 1;
     padding: 20px;
-    
-    
 }
  
 .sort-options {
     display: flex;
+    align-items: center;
     justify-content: flex-end;
     margin-bottom: 20px;
 }
@@ -155,17 +140,11 @@ body {
 .posts-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-    gap: 100px; 
-    padding: 30px;
-    max-width: 3000px;
-    margin: 0 auto; 
-    overflow: hidden;
+    gap: 20px; 
+    padding: 20px;
 }
 
-/* Individual Post Item */ 
-
-
-
+/* Individual Post Item */
 .post-item {
     position: relative;
     border: 1px solid #ddd;
@@ -183,17 +162,15 @@ body {
 }
 
 .post-item h5 {
-    font-size: 3em;
+    font-size: 1.1em;
     margin: 10px 0;
-    color: black;
-    background-color: none;
+    color: #333;
 }
 
 .post-item p {
-    color: black;
-    font-size: 2em; 
+    color: #666;
+    font-size: 1em; 
     text-decoration: none;
-    background-color: none;
 } 
 
 a { 
@@ -220,92 +197,4 @@ a {
 
 .clothes-section { 
     margin-top: 20px;
-}  
-
-/* Create A Post */  
-
-#createPostDiv  {
-    display: flex;                /* Use flexbox for centering */
-    align-items: center;          /* Center vertically */
-    justify-content: center;      /* Center horizontally */
-    min-height: 100vh;            /* Full viewport height */
-    background-color: #f5f5f5;  
-    padding-right: 200px;
-}
-
-#createPostDiv h1 {
-    text-align: center;
-    font-size: 10em;
-}
-
-#createPostDiv form {
-    max-width: 300px;
-    margin: 0 auto;
-    padding: 20px;
-    background: #fff;
-    border-radius: 8px;
-    right: 20px;
-}
-
-#createPostDiv label {
-    display: block;
-    margin-bottom: 8px;
-}
-
-#createPostDiv input, textarea {
-    width: 85%;
-    padding: 8px;
-    margin-bottom: 10px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-}
-navbar-buttons:hover {
-    background-color: orange;
-}
-#createPostDiv .post{
-    top: 15px;
-    right: 20px;
-    position: absolute;
-    width: 20%;
-    padding: 5px;
-    color:orange;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    margin: 15px;
-    
-}
-
-button{
-    border:none;
-    padding: 5px;
-    border-radius: 5px;
-    font-size: 2em;
-}
-#createPostDiv .post {
-    border: 1px solid #ddd;
-    padding: 10px;
-    margin-bottom: 10px;
-    background: #fff;
-}
-#createPostDiv .post {
-    border: 1px solid #ddd;
-    padding: 10px;
-    margin-bottom: 10px;
-    background: #fff;
-}
-
-#createPostDiv .post img {
-    max-width: 100%;
-    height: auto;
-}
-
-#createPostDiv .timestamp {
-    font-size: 0.8em;
-    color: #888;
-}
-
-#createPostDiv .price {
-    font-size: 1.2em;
-    color: #333;
 }
