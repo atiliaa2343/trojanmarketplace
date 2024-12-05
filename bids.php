@@ -23,7 +23,7 @@ if (isset($_GET['item_id']) && !empty($_GET['item_id'])) {
 
     // Query to fetch bids with item and student details for a specific item_id
     $sql = "SELECT Bids.bid_id, Bids.student_id, Bids.item_id, 
-                   Items.image, Items.price, Items.description, Items.``condition`,
+                   Items.image, Items.price, Items.description, Items.`condition`,
                    Students.first_name, Students.last_name, Students.email
             FROM Bids
             JOIN Items ON Bids.item_id = Items.item_id
@@ -118,17 +118,20 @@ if ($result && $result->num_rows > 0) {
                         <a href="item.php?id=<?php echo htmlspecialchars($bid['item_id']); ?>" class="item-link">
                             <img src="<?php echo htmlspecialchars($bid['image']); ?>" alt="<?php echo htmlspecialchars($bid['description']); ?>" />
                             <h5><?php echo htmlspecialchars($bid['description']); ?></h5>
-                            <p><strong>Price:</strong> $<?php echo htmlspecialchars($bid['price']); ?></p>
                             <p><strong>Condition:</strong> <?php echo htmlspecialchars($bid['condition']); ?></p>
-                            <p><strong>Bid ID:</strong> <?php echo htmlspecialchars($bid['bid_id']); ?></p>
-                            <p><strong>Student:</strong> <?php echo htmlspecialchars($bid['first_name'] . ' ' . $bid['last_name']); ?></p>
-                            <p><strong>Email:</strong> <?php echo htmlspecialchars($bid['email']); ?></p>
+                            <button class="bid-button" onclick="placeBid(<?php echo htmlspecialchars($bid['item_id']); ?>)">
+                                Bid ($<?php echo htmlspecialchars($bid['price']); ?>)
+                            </button>
                         </a>
                     </div>
                 <?php endforeach; ?>
             <?php endif; ?>
         </section>
     </main>
+
+    <script>
+        srcipt src="bids.php"
+    </script>
 
 </body>
 </html>

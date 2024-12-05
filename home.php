@@ -132,7 +132,7 @@ if (isset($_GET['action']) && $_GET['action'] === 'fetch') {
                 <a href="bids.php" class="icon-btn" title="Bids">
                     <i class="fa-solid fa-gavel"></i>
                 </a>
-                <a href="#" class="icon-btn" title="Favorites">
+                <a href="favorite.php" class="icon-btn" title="Favorites">
                     <i class="fa-solid fa-heart"></i>
                 </a>
             </div>
